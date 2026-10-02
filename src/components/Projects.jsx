@@ -16,7 +16,7 @@ const projects = [
     bgGrad: 'from-sky-50 to-blue-50',
     border: 'border-sky-200',
     demo: 'https://kickcouture.vercel.app',
-    github: '#',
+    github: 'https://github.com/Manickapream/kickcouture',
     featured: true,
   },
   {
@@ -75,17 +75,17 @@ export default function Projects() {
   const filtered = activeFilter === 'All'
     ? projects
     : projects.filter(p => p.tags.some(t => t.toLowerCase().includes(activeFilter.toLowerCase()))
-        || activeFilter === 'MERN' && p.subtitle.includes('MERN')
-        || activeFilter === 'Full-Stack' && (p.subtitle.includes('MERN') || p.subtitle.includes('Full'))
-        || activeFilter === 'PHP' && p.subtitle.includes('PHP')
-        || activeFilter === 'React' && p.tags.includes('React.js') || activeFilter === 'React' && p.tags.includes('React'));
+      || activeFilter === 'MERN' && p.subtitle.includes('MERN')
+      || activeFilter === 'Full-Stack' && (p.subtitle.includes('MERN') || p.subtitle.includes('Full'))
+      || activeFilter === 'PHP' && p.subtitle.includes('PHP')
+      || activeFilter === 'React' && p.tags.includes('React.js') || activeFilter === 'React' && p.tags.includes('React'));
 
   return (
     <section id="projects" className="py-24 bg-surface relative overflow-hidden">
       {/* Background glowing elements */}
       <div className="absolute top-1/4 left-10 w-72 h-72 bg-primary-500/20 rounded-full blur-[120px] pointer-events-none" />
       <div className="absolute bottom-1/4 right-10 w-96 h-96 bg-accent-500/10 rounded-full blur-[120px] pointer-events-none" />
-      
+
       {/* Floating decorative icons */}
       <motion.div
         animate={{ y: [0, -20, 0], rotate: [0, 10, -10, 0] }}
@@ -115,7 +115,7 @@ export default function Projects() {
       >
         <FaDatabase />
       </motion.div>
-      
+
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary-500/30 to-transparent" />
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10" ref={ref}>
@@ -150,11 +150,10 @@ export default function Projects() {
               onClick={() => setActiveFilter(f)}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className={`px-6 py-2.5 rounded-full text-sm font-medium tracking-wide transition-all duration-300 backdrop-blur-sm border ${
-                activeFilter === f
+              className={`px-6 py-2.5 rounded-full text-sm font-medium tracking-wide transition-all duration-300 backdrop-blur-sm border ${activeFilter === f
                   ? 'bg-primary-500/20 text-primary-300 border-primary-500/50 shadow-[0_0_15px_rgba(56,189,248,0.3)]'
                   : 'bg-surface-2/50 text-slate-400 border-slate-700/50 hover:border-slate-500 hover:text-slate-200'
-              }`}
+                }`}
             >
               {f}
             </motion.button>
@@ -177,13 +176,12 @@ export default function Projects() {
                 initial={{ opacity: 0, scale: 0.95 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ delay: i * 0.1, duration: 0.5, type: 'spring', stiffness: 100 }}
-                className={`group relative rounded-[2rem] overflow-hidden ${
-                  i === 0 && filtered.length > 1 ? 'md:col-span-2 md:flex' : ''
-                }`}
+                className={`group relative rounded-[2rem] overflow-hidden ${i === 0 && filtered.length > 1 ? 'md:col-span-2 md:flex' : ''
+                  }`}
               >
                 {/* Glassmorphism Background */}
                 <div className="absolute inset-0 bg-surface-2/40 backdrop-blur-xl border border-white/5 group-hover:border-white/10 transition-colors duration-500" />
-                
+
                 {/* Glowing Hover Effect */}
                 <div className={`absolute -inset-px opacity-0 group-hover:opacity-100 bg-gradient-to-br ${project.color} blur-xl transition-opacity duration-700 -z-10`} />
 
@@ -200,7 +198,7 @@ export default function Projects() {
                           </span>
                         </div>
                       </motion.div>
-                      
+
                       {project.featured && (
                         <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-400 text-xs font-semibold uppercase tracking-wider">
                           <FaStar className="text-amber-400 mb-0.5" /> Featured
@@ -214,7 +212,7 @@ export default function Projects() {
                     <p className={`text-sm font-medium uppercase tracking-widest mb-6 bg-gradient-to-r ${project.color} bg-clip-text text-transparent inline-block`}>
                       {project.subtitle}
                     </p>
-                    
+
                     <p className="text-slate-400 text-base leading-relaxed mb-8">
                       {project.description}
                     </p>
@@ -258,25 +256,25 @@ export default function Projects() {
                 {/* If it's the large first item, we can add a decorative graphic on the right side */}
                 {i === 0 && filtered.length > 1 && (
                   <div className="hidden md:flex relative w-1/2 p-8 items-center justify-center bg-gradient-to-br from-surface-3/30 to-transparent border-l border-white/5 overflow-hidden">
-                     {/* Decorative background elements */}
-                     <motion.div 
-                       animate={{ 
-                         rotate: [0, 360],
-                       }}
-                       transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-                       className="absolute w-[200%] h-[200%] rounded-full border border-dashed border-white/10"
-                     />
-                     <motion.div 
-                       animate={{ 
-                         rotate: [360, 0],
-                       }}
-                       transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
-                       className="absolute w-[150%] h-[150%] rounded-full border border-dashed border-white/5"
-                     />
-                     <div className={`w-48 h-48 rounded-full bg-gradient-to-br ${project.color} opacity-20 blur-3xl`} />
-                     <div className="absolute text-[120px] text-white/5 flex items-center justify-center w-full h-full">
-                       {project.icon}
-                     </div>
+                    {/* Decorative background elements */}
+                    <motion.div
+                      animate={{
+                        rotate: [0, 360],
+                      }}
+                      transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+                      className="absolute w-[200%] h-[200%] rounded-full border border-dashed border-white/10"
+                    />
+                    <motion.div
+                      animate={{
+                        rotate: [360, 0],
+                      }}
+                      transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
+                      className="absolute w-[150%] h-[150%] rounded-full border border-dashed border-white/5"
+                    />
+                    <div className={`w-48 h-48 rounded-full bg-gradient-to-br ${project.color} opacity-20 blur-3xl`} />
+                    <div className="absolute text-[120px] text-white/5 flex items-center justify-center w-full h-full">
+                      {project.icon}
+                    </div>
                   </div>
                 )}
               </motion.article>
