@@ -15,7 +15,7 @@ const projects = [
     color: 'from-sky-400 to-blue-500',
     bgGrad: 'from-sky-50 to-blue-50',
     border: 'border-sky-200',
-    demo: '#',
+    demo: 'https://kickcouture.vercel.app',
     github: '#',
     featured: true,
   },
