@@ -239,16 +239,16 @@ export default function Projects() {
                           <span className="relative z-10 flex items-center gap-2"><FaGlobe /> Live Demo</span>
                         </motion.a>
                       )}
-                      {/* 
-                      <motion.a
-                        href={project.github}
-                        whileHover={{ scale: 1.05 }}
-                        whileTap={{ scale: 0.95 }}
-                        className="flex-1 flex justify-center items-center gap-2 py-3 px-4 text-sm font-bold text-slate-200 rounded-xl bg-surface-3/50 backdrop-blur-md border border-slate-700/50 hover:border-slate-400 hover:bg-surface-3 transition-all"
-                      >
-                        <FaGithub /> Source Code
-                      </motion.a>
-                      */}
+                      {project.github && project.github !== '#' && (
+                        <motion.a
+                          href={project.github}
+                          whileHover={{ scale: 1.05 }}
+                          whileTap={{ scale: 0.95 }}
+                          className="flex-1 flex justify-center items-center gap-2 py-3 px-4 text-sm font-bold text-slate-200 rounded-xl bg-surface-3/50 backdrop-blur-md border border-slate-700/50 hover:border-slate-400 hover:bg-surface-3 transition-all"
+                        >
+                          <FaGithub /> Source Code
+                        </motion.a>
+                      )}
                     </div>
                   </div>
                 </div>
