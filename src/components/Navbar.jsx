@@ -55,11 +55,31 @@ export default function Navbar() {
             <motion.a
               href="#home"
               onClick={(e) => { e.preventDefault(); handleNav('#home'); }}
-              whileHover={{ scale: 1.05 }}
-              className="font-display font-black text-xl"
+              whileHover={{ scale: 1.08 }}
+              whileTap={{ scale: 0.95 }}
+              className="flex items-center"
+              aria-label="MP Logo - Home"
             >
-              <span className="gradient-text">MP</span>
-              <span className="text-white">.</span>
+              <svg width="56" height="42" viewBox="0 0 56 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <linearGradient id="mpGrad" x1="0" y1="0" x2="56" y2="42" gradientUnits="userSpaceOnUse">
+                    <stop offset="0%" stopColor="#60A5FA" />
+                    <stop offset="50%" stopColor="#3B82F6" />
+                    <stop offset="100%" stopColor="#1D4ED8" />
+                  </linearGradient>
+                </defs>
+                {/* Bold M with thick legs and checkmark dip below */}
+                <path
+                  d="M0 4 L5 4 L12 18 L19 4 L24 4 L24 30 L19 30 L19 20 L13 31 L12 34 L11 31 L5 20 L5 30 L0 30 Z"
+                  fill="url(#mpGrad)"
+                />
+                {/* Bold P with inner cutout */}
+                <path
+                  fillRule="evenodd"
+                  d="M28 4 L28 30 L33 30 L33 21 L39 21 C44.5 21 48 18 48 13 C48 8 44.5 4 39 4 Z M33 8 L39 8 C41.5 8 43.5 10 43.5 13 C43.5 16 41.5 17.5 39 17.5 L33 17.5 Z"
+                  fill="url(#mpGrad)"
+                />
+              </svg>
             </motion.a>
 
             {/* Desktop Links */}

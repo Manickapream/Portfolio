@@ -135,9 +135,10 @@ export default function Experience() {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: i * 0.1 }}
-                    className="group relative bg-surface-2/40 backdrop-blur-xl border border-white/5 rounded-3xl p-6 sm:p-8 hover:border-white/10 transition-all duration-500 overflow-hidden"
+                    className="group relative bg-surface-2/40 backdrop-blur-xl border border-white/5 rounded-3xl p-6 sm:p-8 hover:border-white/10 transition-all duration-500 overflow-hidden isolate"
                   >
-                    <div className={`absolute -inset-px opacity-0 group-hover:opacity-100 bg-gradient-to-r ${exp.color} blur-xl transition-opacity duration-700 -z-10`} />
+                    {/* Contained glow — stays inside the card */}
+                    <div className={`absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-20 bg-gradient-to-br ${exp.color} blur-md transition-opacity duration-500 -z-10 pointer-events-none`} />
 
                     <div className="flex flex-col md:flex-row gap-6 items-start">
                       <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${exp.color} p-0.5 flex-shrink-0 shadow-lg ${exp.shadow}`}>
@@ -194,9 +195,10 @@ export default function Experience() {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: i * 0.1 }}
-                    className="group relative bg-surface-2/40 backdrop-blur-xl border border-white/5 rounded-3xl p-8 hover:border-white/10 transition-all duration-500 flex flex-col h-full overflow-hidden"
+                    className="group relative bg-surface-2/40 backdrop-blur-xl border border-white/5 rounded-3xl p-8 hover:border-white/10 transition-all duration-500 flex flex-col h-full overflow-hidden isolate"
                   >
-                    <div className={`absolute -inset-px opacity-0 group-hover:opacity-100 bg-gradient-to-br ${edu.color} blur-xl transition-opacity duration-700 -z-10`} />
+                    {/* Contained glow — stays inside the card */}
+                    <div className={`absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-20 bg-gradient-to-br ${edu.color} blur-md transition-opacity duration-500 -z-10 pointer-events-none`} />
 
                     <div className="flex items-center gap-4 mb-6">
                       <div className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${edu.color} p-0.5 flex-shrink-0 shadow-lg`}>
